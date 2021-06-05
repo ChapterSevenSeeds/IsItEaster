@@ -1,0 +1,122 @@
+const main = document.getElementById("main");
+const date = new Date();
+
+const easterDates = [
+    "April 15, 2001",
+    "March 31, 2002",	
+    "April 20, 2003",	
+    "April 11, 2004",	
+    "March 27, 2005",
+    "April 16, 2006",	
+    "April 8, 2007",	
+    "March 23, 2008",	
+    "April 12, 2009",	
+    "April 4, 2010",
+    "April 24, 2011",	
+    "April 8, 2012",	
+    "March 31, 2013",	
+    "April 20, 2014",	
+    "April 5, 2015",
+    "March 27, 2016",	
+    "April 16, 2017",	
+    "April 1, 2018",	
+    "April 21, 2019",	
+    "April 12, 2020",
+    "April 4, 2021",	
+    "April 17, 2022",	
+    "April 9, 2023",	
+    "March 31, 2024",	
+    "April 20, 2025",
+    "April 5, 2026",	
+    "March 28, 2027",	
+    "April 16, 2028",	
+    "April 1, 2029",	
+    "April 21, 2030",
+    "April 13, 2031",	
+    "March 28, 2032",	
+    "April 17, 2033",	
+    "April 9, 2034",	
+    "March 25, 2035",
+    "April 13, 2036",	
+    "April 5, 2037",	
+    "April 25, 2038",	
+    "April 10, 2039",	
+    "April 1, 2040",
+    "April 21, 2041",	
+    "April 6, 2042",	
+    "March 29, 2043",	
+    "April 17, 2044",	
+    "April 9, 2045",
+    "March 25, 2046",	
+    "April 14, 2047",	
+    "April 5, 2048",	
+    "April 18, 2049",	
+    "April 10, 2050",
+    "April 2, 2051",	
+    "April 21, 2052",	
+    "April 6, 2053",	
+    "March 29, 2054",	
+    "April 18, 2055",
+    "April 2, 2056",	
+    "April 22, 2057",	
+    "April 14, 2058",	
+    "March 30, 2059",	
+    "April 18, 2060",
+    "April 10, 2061",	
+    "March 26, 2062",	
+    "April 15, 2063",	
+    "April 6, 2064",	
+    "March 29, 2065",
+    "April 11, 2066",	
+    "April 3, 2067",	
+    "April 22, 2068",	
+    "April 14, 2069",	
+    "March 30, 2070",
+    "April 19, 2071",	
+    "April 10, 2072",	
+    "March 26, 2073",	
+    "April 15, 2074",	
+    "April 7, 2075",
+    "April 19, 2076",	
+    "April 11, 2077",	
+    "April 3, 2078",	
+    "April 23, 2079",	
+    "April 7, 2080",
+    "March 30, 2081",	
+    "April 19, 2082",	
+    "April 4, 2083",	
+    "March 26, 2084",	
+    "April 15, 2085",
+    "March 31, 2086",	
+    "April 20, 2087",	
+    "April 11, 2088",	
+    "April 3, 2089",	
+    "April 16, 2090",
+    "April 8, 2091",	
+    "March 30, 2092",	
+    "April 12, 2093",	
+    "April 4, 2094",	
+    "April 24, 2095",
+    "April 15, 2096",	
+    "March 31, 2097",	
+    "April 20, 2098",	
+    "April 12, 2099",	
+    "March 28, 2100"
+]
+
+let isEaster = false;
+
+for (const easterDate of easterDates) {
+    const easterDateObject = new Date(easterDate);
+
+    if (easterDateObject.toDateString() === date.toDateString()) {
+        isEaster = true;
+        break;
+    }
+}
+
+if (isEaster) {
+    main.innerText = "Yes.";
+} else {
+    main.innerText = "No.";
+}
