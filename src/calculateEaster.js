@@ -15,5 +15,5 @@ module.exports = function calculateEaster(year) {
         month = 3 + f((L + 40) / 44),
         day = L + 28 - 31 * f(month / 4);
 
-    return new Date(`${month}-${day}-${year}`);
+    return new Date(year, month - 1, day);
 }
