@@ -11,7 +11,7 @@
         "build-dev": "webpack serve --mode development",
         "build-prod": "webpack --mode production",
         "test": "jest",
-        "publish": "npm run build-prod && aws s3 sync \"dist\" \"s3://isiteastertoday.com\""
+        "publish": "npm run build-prod && aws s3 sync \"dist\" \"s3://isiteastertoday.com\" & aws cloudfront create-invalidation --distribution-id E3AKP8684BPT4P --paths \"/*\""
     },
     "devDependencies": {
         "@babel/core": "^7.20.7",
