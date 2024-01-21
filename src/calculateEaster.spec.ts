@@ -1,3 +1,6 @@
+import calculateEaster from "./calculateEaster";
+import dayjs from "dayjs";
+
 // https://tlarsen2.tripod.com/thomaslarsen/easterdates.html
 const allDates = [
     "Apr 11 1700",
@@ -600,12 +603,11 @@ const allDates = [
     "Apr 11 2297",
     "Apr 03 2298",
     "Apr 16 2299"
-].map(x => new Date(x));
-const calculateEaster = require('./calculateEaster');
+].map(x => dayjs(x));
 
 test("All dates", () => {
     for (const date of allDates) {
-        const result = calculateEaster(date.getFullYear()).toDateString();
-        expect(result).toBe(date.toDateString());
+        const result = calculateEaster(date.year());
+        expect(result.isSame(date)).toBe(true);
     }
 });
